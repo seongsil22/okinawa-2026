@@ -80,96 +80,742 @@
         ];
 
         // --- 일정 데이터 ---
-        const initialScheduleData = [
+const initialScheduleData = [
+    {
+        "day": "1일차",
+        "date": "1월 3일 (토)",
+        "title": "오키나와 도착 & 북부 이동",
+        "events": [
             {
-                "day": "1일차",
-                "date": "1월 3일 (토)",
-                "title": "오키나와 도착 & 북부 이동",
-                "events": [
-                    { "time": "11:50", "title": "인천공항 제1터미널 출발", "type": "move", "note": "티웨이 항공 TW281 보잉 737 MAX", "mapLink": "https://maps.app.goo.gl/jtrzXBXb1ERMYBBA7", "links": [] },
-                    { "time": "14:25", "title": "오키나와 나하 공항 도착", "type": "move", "note": "입국 수속 후 렌터카 셔틀 정류장으로 이동", "mapLink": "https://maps.app.goo.gl/sF3iw8bzizF6v7LaA", "links": [] },
-                    { "time": "15:30", "title": "렌트카 업체 미팅", "type": "move", "note": "우리렌트카", "mapLink": "https://maps.app.goo.gl/sF3iw8bzizF6v7LaA", "links": [] },
-                    { "time": "16:20", "title": "렌터카 수령 및 출발", "type": "move", "note": "차량 상태 확인", "mapLink": "https://maps.app.goo.gl/43v4n7nNy8pE5nf8A", "links": [] },			
-                    { "time": "17:30", "title": "아메리칸 아메리칸", "type": "food", "note": "추천: 스테이크 & 수제 파이. 주차장 있음.", "mapLink": "https://maps.app.goo.gl/kh3vJpuTXCUN7DsHA", "links": [{ "label": "아메리칸빌리지 스테이크 양식 맛집 리뷰 - 아메리칸 아메리칸", "url": "https://cafe.naver.com/newtowndaejang/2443" }] },
-                    { "time": "19:00", "title": "북부(나고)로 이동", "type": "move", "note": "고속도로 이용 추천", "mapLink": "", "links": [] },
-                    { "time": "20:30", "title": "호텔 유가후 인 오키나와", "type": "stay", "note": "체크인. 주차비 무료", "mapLink": "https://maps.app.goo.gl/krrJiVKyyyLdxEwo9", "links": [] },
-                    { "time": "21:30", "title": "[선택]잠바루 타코", "type": "food", "note": "야식 타코라이스. 재료 소진 주의.", "mapLink": "https://maps.app.goo.gl/GeXBivuzdHoN1YqU8", "links": [] }
+                "time": "11:50",
+                "title": "인천공항 제1터미널 출발",
+                "type": "move",
+                "note": "티웨이 항공 TW281 보잉 737 MAX",
+                "mapLink": "https://maps.app.goo.gl/jtrzXBXb1ERMYBBA7",
+                "links": []
+            },
+            {
+                "time": "14:25",
+                "title": "오키나와 나하 공항 도착",
+                "type": "move",
+                "note": "입국 수속 후 렌터카 셔틀 정류장으로 이동",
+                "mapLink": "https://maps.app.goo.gl/sF3iw8bzizF6v7LaA",
+                "links": []
+            },
+            {
+                "time": "15:30",
+                "title": "렌트카 업체 미팅",
+                "type": "move",
+                "note": "우리렌트카",
+                "mapLink": "https://maps.app.goo.gl/sF3iw8bzizF6v7LaA",
+                "links": [
+                    {
+                        "label": "우리렌터카, 주유 하는 법부터 일본 운전 꿀팁까지",
+                        "url": "https://blog.naver.com/skagytjs24/224039951707"
+                    }
                 ]
             },
             {
-                "day": "2일차",
-                "date": "1월 4일 (일)",
-                "title": "북부 완전 정복",
-                "events": [
-                    { "time": "07:00", "title": "호텔 조식", "type": "stay", "note": "", "mapLink": "https://maps.app.goo.gl/krrJiVKyyyLdxEwo9", "links": [] },
-                    { "time": "09:00", "title": "호텔 출발", "type": "stay", "note": "", "mapLink": "https://maps.app.goo.gl/krrJiVKyyyLdxEwo9", "links": [] },
-                    { "time": "09:30", "title": "츄라우미 수족관", "type": "spot", "note": "P7 주차장, 입장료 2,130엔", "mapLink": "https://maps.app.goo.gl/5RcGMxvgkxwSSZHo6", "links": [] },
-                    { "time": "12:30", "title": "비세 후쿠기 가로수길", "type": "spot", "note": "자전거 산책 추천.", "mapLink": "https://maps.app.goo.gl/HFM5RkcLYnS632Yh9", "links": [] },
-                    { "time": "12:40", "title": "나키진 소바", "type": "food", "note": "동선 최적화 맛집. 고즈넉한 분위기.", "mapLink": "https://maps.app.goo.gl/rxu71EDrVeBwMqY97", "links": [] },
-                    { "time": "14:00", "title": "드라이브 인 리카리카 와루미", "type": "spot", "note": "햄버거 유명 휴게소, 와루미 대교", "mapLink": "https://maps.app.goo.gl/X6TMLihbeTAbs6rm6", "links": [] },
-                    { "time": "15:00", "title": "코우리 대교 & 섬", "type": "spot", "note": "드라이브 및 하트락 구경.", "mapLink": "https://maps.app.goo.gl/753v4t2dRN5K8VPd8", "links": [] },
-                    { "time": "16:30", "title": "나고 파인애플 파크", "type": "spot", "note": "기념품샵(와인/카스테라) 추천.", "mapLink": "https://maps.app.goo.gl/GEorFszRFK6iZx889", "links": [] },
-                    { "time": "18:30", "title": "하마스시 (나고점)", "type": "food", "note": "회전초밥. 터치패널 주문 가능.", "mapLink": "https://maps.app.goo.gl/y1fiMrCbq5EKx2Du9", "links": [] },
-                    { "time": "20:30", "title": "메가 돈키호테 나고점", "type": "spot", "note": "한적하게 쇼핑 가능", "mapLink": "https://maps.app.goo.gl/5zT6NwQAssWevp457", "links": [] },
-                    { "time": "22:00", "title": "호텔 귀가", "type": "stay", "note": "", "mapLink": "https://maps.app.goo.gl/krrJiVKyyyLdxEwo9", "links": [] }
+                "time": "16:20",
+                "title": "렌터카 수령 및 출발",
+                "type": "move",
+                "note": "차량 상태 확인",
+                "mapLink": "https://maps.app.goo.gl/43v4n7nNy8pE5nf8A",
+                "links": []
+            },
+            {
+                "time": "17:30",
+                "title": "아메리칸 아메리칸",
+                "type": "food",
+                "note": "추천: 스테이크 & 수제 파이. 주차장 있음.",
+                "mapLink": "https://maps.app.goo.gl/kh3vJpuTXCUN7DsHA",
+                "links": [
+                    {
+                        "label": "가정식 가성비 철판 스테이크 맛집",
+                        "url": "https://blog.naver.com/sylvie015_/224112812312"
+                    }
                 ]
             },
             {
-                "day": "3일차",
-                "date": "1월 5일 (월)",
-                "title": "중부 투어 & 남부 이동",
-                "events": [
-                    { "time": "07:00", "title": "호텔 조식", "type": "stay", "note": "", "mapLink": "https://maps.app.goo.gl/krrJiVKyyyLdxEwo9", "links": [] },
-                    { "time": "09:00", "title": "호텔 체크아웃", "type": "stay", "note": "", "mapLink": "https://maps.app.goo.gl/krrJiVKyyyLdxEwo9", "links": [] },
-                    { "time": "09:50", "title": "만좌모", "type": "spot", "note": "입장료 100엔.", "mapLink": "https://maps.app.goo.gl/uiZhn7NBfZpdzZrz8", "links": [] },
-                    { "time": "11:30", "title": "잔파곶 등대", "type": "spot", "note": "웅장한 절벽 뷰.", "mapLink": "https://maps.app.goo.gl/Kx3vf1FcbEKQTmqX9", "links": [] },
-                    { "time": "13:00", "title": "야키니쿠 나베시마", "type": "food", "note": "이온몰 라이카무 5층. 런치 추천.", "mapLink": "https://maps.app.goo.gl/w8f2PHAPLchbmJNq9", "links": [] },
-                    { "time": "15:30", "title": "아메리칸 빌리지(간식)", "type": "spot", "note": "카라바나(도넛) & 코오리오 키자메(빙수).", "mapLink": "https://maps.app.goo.gl/9KY3WXdfd8K7wb1T8", "links": [] },
-                    { "time": "17:00", "title": "선셋 비치 & 산책", "type": "spot", "note": "일몰 감상 및 쇼핑.", "mapLink": "https://maps.app.goo.gl/eegNVjjQW3BNtfz36", "links": [] },
-                    { "time": "19:30", "title": "나하 도큐 레이 호텔", "type": "stay", "note": "체크인. 주차비 1박 1,500엔.", "mapLink": "https://maps.app.goo.gl/hwuMsbtPA2aA3jNr6", "links": [] },
-                    { "time": "20:30", "title": "Menkyokaiden sakaba 이자카야", "type": "food", "note": "모츠나베", "mapLink": "https://maps.app.goo.gl/LdS5GDFiKt3LCCLG6", "links": [] },
-                    { "time": "22:00", "title": "호텔 귀가", "type": "stay", "note": "", "mapLink": "https://maps.app.goo.gl/hwuMsbtPA2aA3jNr6", "links": [] }
+                "time": "19:00",
+                "title": "북부(나고)로 이동",
+                "type": "move",
+                "note": "고속도로 이용 추천",
+                "mapLink": "",
+                "links": []
+            },
+            {
+                "time": "20:30",
+                "title": "호텔 유가후 인 오키나와",
+                "type": "stay",
+                "note": "체크인. 주차비 무료",
+                "mapLink": "https://maps.app.goo.gl/krrJiVKyyyLdxEwo9",
+                "links": [
+                    {
+                        "label": "호텔 유가후 인 오키나와 주차장 및 솔직 후기",
+                        "url": "https://blog.naver.com/dudwl_a/224073454541"
+                    },
+                    {
+                        "label": "오키나와 북부 숙소 - 호텔 유가후 인 오키나와",
+                        "url": "https://blog.naver.com/zoarasm/224084411648"
+                    }
                 ]
             },
             {
-                "day": "4일차",
-                "date": "1월 6일 (화)",
-                "title": "남부 투어 & 국제거리",
-                "events": [
-                    { "time": "07:00", "title": "호텔 조식", "type": "stay", "note": "", "mapLink": "https://maps.app.goo.gl/hwuMsbtPA2aA3jNr6", "links": [] },
-                    { "time": "09:00", "title": "호텔 출발", "type": "stay", "note": "", "mapLink": "https://maps.app.goo.gl/hwuMsbtPA2aA3jNr6", "links": [] },
-                    { "time": "09:30", "title": "슈리성 공원", "type": "spot", "note": "입장료 400엔. 편한 신발.", "mapLink": "https://maps.app.goo.gl/Tm2u4P3Q8NHYWuMMA", "links": [] },
-                    { "time": "11:30", "title": "치넨 곶 공원", "type": "spot", "note": "새해 해돋이 명소", "mapLink": "https://maps.app.goo.gl/MHG8wBEefsZivd7T9", "links": [] },
-                    { "time": "11:30", "title": "시키나엔", "type": "spot", "note": "입장료 400엔. 류쿠 왕국 별궁", "mapLink": "https://maps.app.goo.gl/dnAySxh5PrxR5D7R8", "links": [] },
-                    { "time": "12:30", "title": "국제거리 주차장", "type": "food", "note": "1시간 100엔", "mapLink": "https://maps.app.goo.gl/42dnukJB4PDeEoBL8", "links": [] },
-                    { "time": "12:40", "title": "잼스 타코", "type": "food", "note": "국제거리 타코 맛집.", "mapLink": "https://maps.app.goo.gl/XFGArLhWorcVeDMu6", "links": [] },
-                    { "time": "12:40", "title": "라멘단보 나하 마키시점", "type": "food", "note": "국제거리 라멘 맛집", "mapLink": "https://maps.app.goo.gl/FrskCVw6rfrWKd8M6", "links": [] },
-                    { "time": "12:40", "title": "마제멘 마호로바", "type": "food", "note": "국제거리 마제멘 맛집", "mapLink": "https://maps.app.goo.gl/CMKtJ264rGF1qmp29", "links": [] },
-                    { "time": "14:00", "title": "오키나와 월드", "type": "spot", "note": "입장료 2,000엔. 동양 최대 종유석 동굴 탐험.", "mapLink": "https://maps.app.goo.gl/bdFnXioJ8frzbcDBA", "links": [] },
-                    { "time": "16:30", "title": "우미카지 테라스", "type": "spot", "note": "공항 뷰 카페 거리", "mapLink": "https://maps.app.goo.gl/M3wWYDDtSB6UtxiAA", "links": [] },
-                    { "time": "19:00", "title": "키지무나", "type": "food", "note": "타코 라이스", "mapLink": "https://maps.app.goo.gl/Gf9zN1PA9vP81ccw8", "links": [] },
-                    { "time": "19:00", "title": "마제멘 마호로바", "type": "food", "note": "국제거리 마제멘 맛집", "mapLink": "https://maps.app.goo.gl/CMKtJ264rGF1qmp29", "links": [] },
-                    { "time": "20:30", "title": "호텔 귀가", "type": "stay", "note": "", "mapLink": "https://maps.app.goo.gl/hwuMsbtPA2aA3jNr6", "links": [] },
-                    { "time": "21:00", "title": "국제거리 야경", "type": "spot", "note": "국제거리 워킹, 돈키호테 쇼핑.", "mapLink": "https://maps.app.goo.gl/xFSGrJW2K6py9ggo8", "links": [] }
-                ]
-            },
-            {
-                "day": "5일차",
-                "date": "1월 7일 (수)",
-                "title": "귀국 및 마지막 쇼핑",
-                "events": [
-                    { "time": "07:00", "title": "호텔 조식", "type": "stay", "note": "", "mapLink": "https://maps.app.goo.gl/hwuMsbtPA2aA3jNr6", "links": [] },
-                    { "time": "09:00", "title": "호텔 체크아웃", "type": "stay", "note": "", "mapLink": "https://maps.app.goo.gl/hwuMsbtPA2aA3jNr6", "links": [] },
-                    { "time": "10:00", "title": "나미노우에 신궁", "type": "spot", "note": "절벽 위 신사. 근처 주차장", "mapLink": "https://maps.app.goo.gl/SSAsQQnSKT3MUka67", "links": [] },
-                    { "time": "11:30", "title": "에이분 (EIBUN)", "type": "food", "note": "퓨전 소바. 오픈런 추천.", "mapLink": "https://maps.app.goo.gl/kd4AExTxzoizyfgk9", "links": [] },
-                    { "time": "11:30", "title": "쿠라시스", "type": "food", "note": "이온몰 2층, 회전 초밥", "mapLink": "https://maps.app.goo.gl/kd4AExTxzoizyfgk9", "links": [] },
-                    { "time": "13:00", "title": "이온몰 나하 쇼핑", "type": "spot", "note": "공항 근처 쇼핑.", "mapLink": "https://maps.app.goo.gl/HPh2kDCN1ihW36nb9", "links": [] },
-                    { "time": "14:00", "title": "렌터카 반납 & 공항", "type": "move", "note": "주유 후 반납.", "mapLink": "https://maps.app.goo.gl/43v4n7nNy8pE5nf8A", "links": [] },
-                    { "time": "16:50", "title": "오키나와 나하 공항 출발", "type": "move", "note": "제주항공 7C1802 보잉 737-800", "mapLink": "https://maps.app.goo.gl/sF3iw8bzizF6v7LaA", "links": [] },
-                    { "time": "19:15", "title": "인천공항 제1터미널 도착", "type": "move", "note": "안전 귀국!", "mapLink": "https://maps.app.goo.gl/jtrzXBXb1ERMYBBA7", "links": [] }
+                "time": "21:30",
+                "title": "[선택]잠바루 타코",
+                "type": "food",
+                "note": "야식 타코라이스. 재료 소진 주의.",
+                "mapLink": "https://maps.app.goo.gl/GeXBivuzdHoN1YqU8",
+                "links": [
+                    {
+                        "label": "타코라이스 맛집",
+                        "url": "https://blog.naver.com/jinheejong1121/224111618043"
+                    },
+                    {
+                        "label": "가성비 좋은 타코 전문점",
+                        "url": "https://blog.naver.com/walk_eat/223555600191"
+                    }
                 ]
             }
-        ];
+        ]
+    },
+    {
+        "day": "2일차",
+        "date": "1월 4일 (일)",
+        "title": "북부 완전 정복",
+        "events": [
+            {
+                "time": "07:00",
+                "title": "호텔 조식",
+                "type": "stay",
+                "note": "",
+                "mapLink": "https://maps.app.goo.gl/krrJiVKyyyLdxEwo9",
+                "links": []
+            },
+            {
+                "time": "09:00",
+                "title": "호텔 출발",
+                "type": "stay",
+                "note": "",
+                "mapLink": "https://maps.app.goo.gl/krrJiVKyyyLdxEwo9",
+                "links": []
+            },
+            {
+                "time": "09:30",
+                "title": "츄라우미 수족관",
+                "type": "spot",
+                "note": "P7 주차장, 입장료 2,130엔",
+                "mapLink": "https://maps.app.goo.gl/5RcGMxvgkxwSSZHo6",
+                "links": [
+                    {
+                        "label": "츄라우미 수족관",
+                        "url": "https://blog.naver.com/zoarasm/224088749813"
+                    },
+                    {
+                        "label": "츄라우미 수족관 입장료 돌고래쇼",
+                        "url": "https://blog.naver.com/narsyus/224113051119"
+                    }
+                ]
+            },
+            {
+                "time": "12:30",
+                "title": "비세 후쿠기 가로수길",
+                "type": "spot",
+                "note": "자전거 산책 추천.",
+                "mapLink": "https://maps.app.goo.gl/HFM5RkcLYnS632Yh9",
+                "links": [
+                    {
+                        "label": "비세 후쿠기 가로수길 자전거 대여",
+                        "url": "https://blog.naver.com/mae_log/223514399854"
+                    },
+                    {
+                        "label": "비세후쿠기길 무료 주차장 TIP",
+                        "url": "https://blog.naver.com/haha5874/223897793577"
+                    }
+                ]
+            },
+            {
+                "time": "12:40",
+                "title": "나키진 소바",
+                "type": "food",
+                "note": "동선 최적화 맛집. 고즈넉한 분위기.",
+                "mapLink": "https://maps.app.goo.gl/rxu71EDrVeBwMqY97",
+                "links": [
+                    {
+                        "label": "소바 맛집 메뉴 및 주차",
+                        "url": "https://blog.naver.com/remine-/223904882394"
+                    },
+                    {
+                        "label": "오키나와소바 맛집",
+                        "url": "https://blog.naver.com/8271122/224094652772"
+                    }
+                ]
+            },
+            {
+                "time": "14:00",
+                "title": "드라이브 인 리카리카 와루미",
+                "type": "spot",
+                "note": "햄버거 유명 휴게소, 와루미 대교",
+                "mapLink": "https://maps.app.goo.gl/X6TMLihbeTAbs6rm6",
+                "links": [
+                    {
+                        "label": "리카리카와루미 햄버거 맛집 ",
+                        "url": "https://blog.naver.com/dudgns3044/224101100387"
+                    },
+                    {
+                        "label": "북부 포토스팟 와루미대교",
+                        "url": "https://blog.naver.com/joonwh1/223486234034"
+                    }
+                ]
+            },
+            {
+                "time": "15:00",
+                "title": "코우리 대교 & 섬",
+                "type": "spot",
+                "note": "드라이브 및 하트락 구경.",
+                "mapLink": "https://maps.app.goo.gl/753v4t2dRN5K8VPd8",
+                "links": [
+                    {
+                        "label": "드라이브 코스 코우리섬",
+                        "url": "https://blog.naver.com/qkrwjddms105/223856785423"
+                    },
+                    {
+                        "label": "북부 드라이브 힐링 스팟",
+                        "url": "https://blog.naver.com/rr2viva/223941284553"
+                    }
+                ]
+            },
+            {
+                "time": "16:30",
+                "title": "나고 파인애플 파크",
+                "type": "spot",
+                "note": "기념품샵(와인/카스테라) 추천.",
+                "mapLink": "https://maps.app.goo.gl/GEorFszRFK6iZx889",
+                "links": [
+                    {
+                        "label": "티켓 입장료 꿀팁",
+                        "url": "https://blog.naver.com/dongi0508/223998567185"
+                    }
+                ]
+            },
+            {
+                "time": "18:30",
+                "title": "하마스시 (나고점)",
+                "type": "food",
+                "note": "회전초밥. 터치패널 주문 가능.",
+                "mapLink": "https://maps.app.goo.gl/y1fiMrCbq5EKx2Du9",
+                "links": [
+                    {
+                        "label": "가성비 회전초밥",
+                        "url": "https://blog.naver.com/joheejae0321/224049604144"
+                    },
+                    {
+                        "label": "하마스시 나고점 솔직 메뉴 추천",
+                        "url": "https://blog.naver.com/j_jang_vely/224072784949"
+                    }
+                ]
+            },
+            {
+                "time": "20:30",
+                "title": "메가 돈키호테 나고점",
+                "type": "spot",
+                "note": "한적하게 쇼핑 가능, 면세 5,500엔 이상 ",
+                "mapLink": "https://maps.app.goo.gl/5zT6NwQAssWevp457",
+                "links": [
+                    {
+                        "label": "메가돈키호테 나고점 한정 쇼핑 리스트 BEST 10 (ft. 위치,주차)",
+                        "url": "https://blog.naver.com/algotrip/224117374374"
+                    }
+                ]
+            },
+            {
+                "time": "22:00",
+                "title": "호텔 귀가",
+                "type": "stay",
+                "note": "",
+                "mapLink": "https://maps.app.goo.gl/krrJiVKyyyLdxEwo9",
+                "links": []
+            }
+        ]
+    },
+    {
+        "day": "3일차",
+        "date": "1월 5일 (월)",
+        "title": "중부 투어 & 남부 이동",
+        "events": [
+            {
+                "time": "07:00",
+                "title": "호텔 조식",
+                "type": "stay",
+                "note": "",
+                "mapLink": "https://maps.app.goo.gl/krrJiVKyyyLdxEwo9",
+                "links": []
+            },
+            {
+                "time": "09:00",
+                "title": "호텔 체크아웃",
+                "type": "stay",
+                "note": "",
+                "mapLink": "https://maps.app.goo.gl/krrJiVKyyyLdxEwo9",
+                "links": []
+            },
+            {
+                "time": "09:50",
+                "title": "만좌모",
+                "type": "spot",
+                "note": "입장료 100엔.",
+                "mapLink": "https://maps.app.goo.gl/uiZhn7NBfZpdzZrz8",
+                "links": [
+                    {
+                        "label": "산책하기 좋은 여행지 만좌모",
+                        "url": "https://blog.naver.com/zoarasm/224093404940"
+                    }
+                ]
+            },
+            {
+                "time": "11:30",
+                "title": "잔파곶 등대",
+                "type": "spot",
+                "note": "웅장한 절벽 뷰.",
+                "mapLink": "https://maps.app.goo.gl/Kx3vf1FcbEKQTmqX9",
+                "links": [
+                    {
+                        "label": "잔파곶 잔파미사키 등대",
+                        "url": "https://blog.naver.com/van_sinsy/224030046001"
+                    }
+                ]
+            },
+            {
+                "time": "13:00",
+                "title": "야키니쿠 나베시마",
+                "type": "food",
+                "note": "이온몰 라이카무 5층. 런치 추천.",
+                "mapLink": "https://maps.app.goo.gl/w8f2PHAPLchbmJNq9",
+                "links": [
+                    {
+                        "label": "나베시마 야끼니꾸",
+                        "url": "https://blog.naver.com/always087/223945464107"
+                    },
+                    {
+                        "label": "포켓몬센터부터 다이소까지 쇼핑하기 좋은 이온몰 라이카무",
+                        "url": "https://blog.naver.com/coutier/224077963427"
+                    },
+                    {
+                        "label": "포켓몬센터 이온몰 라이카무점 면세",
+                        "url": "https://blog.naver.com/always087/223941459131"
+                    }
+                ]
+            },
+            {
+                "time": "15:30",
+                "title": "아메리칸 빌리지(간식)",
+                "type": "spot",
+                "note": "카라바나(도넛) & 코오리오 키자메(빙수).",
+                "mapLink": "https://maps.app.goo.gl/9KY3WXdfd8K7wb1T8",
+                "links": [
+                    {
+                        "label": "아메리칸 빌리지 구경하기",
+                        "url": "https://blog.naver.com/dooklrr/223965730551"
+                    },
+                    {
+                        "label": "무료 주차",
+                        "url": "https://blog.naver.com/dennis0525/224043193647"
+                    },
+                    {
+                        "label": "카라바나 아이스크림 & 도넛",
+                        "url": "https://blog.naver.com/yb_taste/224042529573"
+                    },
+                    {
+                        "label": "코오리오 키자메 빙수",
+                        "url": "https://blog.naver.com/yeoness2/223998682168"
+                    }
+                ]
+            },
+            {
+                "time": "17:00",
+                "title": "선셋 비치 & 산책",
+                "type": "spot",
+                "note": "일몰 감상 및 쇼핑.",
+                "mapLink": "https://maps.app.goo.gl/eegNVjjQW3BNtfz36",
+                "links": [
+                    {
+                        "label": "아메리칸빌리지 구경",
+                        "url": "https://blog.naver.com/jb_328/224092134043"
+                    },
+                    {
+                        "label": "아메리칸빌리지 구경, 블루씰 아이스크림",
+                        "url": "https://blog.naver.com/ddddh_k/224082078269"
+                    }
+                ]
+            },
+            {
+                "time": "19:30",
+                "title": "나하 도큐 레이 호텔",
+                "type": "stay",
+                "note": "체크인. 주차비 1박 1,500엔.",
+                "mapLink": "https://maps.app.goo.gl/hwuMsbtPA2aA3jNr6",
+                "links": [
+                    {
+                        "label": "도큐 레이 호텔",
+                        "url": "https://blog.naver.com/melodytravel/224028441164"
+                    }
+                ]
+            },
+            {
+                "time": "20:30",
+                "title": "Menkyokaiden sakaba 이자카야",
+                "type": "food",
+                "note": "모츠나베",
+                "mapLink": "https://maps.app.goo.gl/LdS5GDFiKt3LCCLG6",
+                "links": [
+                    {
+                        "label": "이자카야 맛집 추천 면허 전전 술집",
+                        "url": "https://blog.naver.com/ragun37/223916446659"
+                    },
+                    {
+                        "label": "이자카야 면허 전전 술집",
+                        "url": "https://blog.naver.com/rozylog/223921052053"
+                    }
+                ]
+            },
+            {
+                "time": "22:00",
+                "title": "호텔 귀가",
+                "type": "stay",
+                "note": "",
+                "mapLink": "https://maps.app.goo.gl/hwuMsbtPA2aA3jNr6",
+                "links": []
+            }
+        ]
+    },
+    {
+        "day": "4일차",
+        "date": "1월 6일 (화)",
+        "title": "남부 투어 & 국제거리",
+        "events": [
+            {
+                "time": "07:00",
+                "title": "호텔 조식",
+                "type": "stay",
+                "note": "",
+                "mapLink": "https://maps.app.goo.gl/hwuMsbtPA2aA3jNr6",
+                "links": []
+            },
+            {
+                "time": "09:00",
+                "title": "호텔 출발",
+                "type": "stay",
+                "note": "",
+                "mapLink": "https://maps.app.goo.gl/hwuMsbtPA2aA3jNr6",
+                "links": []
+            },
+            {
+                "time": "09:30",
+                "title": "슈리성 공원",
+                "type": "spot",
+                "note": "입장료 400엔. 편한 신발.",
+                "mapLink": "https://maps.app.goo.gl/Tm2u4P3Q8NHYWuMMA",
+                "links": [
+                    {
+                        "label": "입장료 관람시간 주차요금",
+                        "url": "https://blog.naver.com/jhr39/223996060352"
+                    }
+                ]
+            },
+            {
+                "time": "11:30",
+                "title": "치넨 곶 공원",
+                "type": "spot",
+                "note": "새해 해돋이 명소",
+                "mapLink": "https://maps.app.goo.gl/MHG8wBEefsZivd7T9",
+                "links": [
+                    {
+                        "label": "치넨 미사키 치넨 곶 공원 무료",
+                        "url": "https://blog.naver.com/yejiiiiii_/224101855919"
+                    }
+                ]
+            },
+            {
+                "time": "11:30",
+                "title": "시키나엔",
+                "type": "spot",
+                "note": "입장료 400엔. 류쿠 왕국 별궁",
+                "mapLink": "https://maps.app.goo.gl/dnAySxh5PrxR5D7R8",
+                "links": [
+                    {
+                        "label": "류쿠 왕국의 별궁",
+                        "url": "https://blog.naver.com/sordy907/224088069036"
+                    }
+                ]
+            },
+            {
+                "time": "12:30",
+                "title": "국제거리 주차장",
+                "type": "food",
+                "note": "1시간 100엔",
+                "mapLink": "https://maps.app.goo.gl/42dnukJB4PDeEoBL8",
+                "links": [
+                    {
+                        "label": "슈리성 시키나엔 잼스 타코스 우미카지테라스",
+                        "url": "https://blog.naver.com/gkfxod/223928709172"
+                    },
+                    {
+                        "label": "코인주차장 이용하는 방법 (요금, 결제)",
+                        "url": "https://blog.naver.com/baby_b/223482651254"
+                    },
+                    {
+                        "label": "코인 주차장 카드 결제 이용 후기 TIMES 주차장",
+                        "url": "https://blog.naver.com/yony__yony__/223858351092"
+                    }
+                ]
+            },
+            {
+                "time": "12:40",
+                "title": "잼스 타코",
+                "type": "food",
+                "note": "국제거리 타코 맛집.",
+                "mapLink": "https://maps.app.goo.gl/XFGArLhWorcVeDMu6",
+                "links": [
+                    {
+                        "label": "잼스타코 JAM'S TACOS",
+                        "url": "https://blog.naver.com/jeni_167/224056129497"
+                    }
+                ]
+            },
+            {
+                "time": "12:40",
+                "title": "라멘단보 나하 마키시점",
+                "type": "food",
+                "note": "국제거리 라멘 맛집",
+                "mapLink": "https://maps.app.goo.gl/FrskCVw6rfrWKd8M6",
+                "links": [
+                    {
+                        "label": "라멘 맛집 라멘단보 나하 마키시점",
+                        "url": "https://blog.naver.com/eatclick/224038032353"
+                    },
+                    {
+                        "label": "라멘단보 메뉴추천 오픈런 후기",
+                        "url": "https://blog.naver.com/wnqkf517/224027482891"
+                    }
+                ]
+            },
+            {
+                "time": "12:40",
+                "title": "마제멘 마호로바",
+                "type": "food",
+                "note": "국제거리 마제멘 맛집",
+                "mapLink": "https://maps.app.goo.gl/CMKtJ264rGF1qmp29",
+                "links": [
+                    {
+                        "label": "마제소바 리얼후기",
+                        "url": "https://blog.naver.com/j_jang_vely/224068474673"
+                    }
+                ]
+            },
+            {
+                "time": "14:00",
+                "title": "오키나와 월드",
+                "type": "spot",
+                "note": "입장료 2,000엔. 동양 최대 종유석 동굴 탐험.",
+                "mapLink": "https://maps.app.goo.gl/bdFnXioJ8frzbcDBA",
+                "links": [
+                    {
+                        "label": "오키나와월드 입장권 교쿠센도 동굴 파충류 공연",
+                        "url": "https://blog.naver.com/skylove2405/224115293453"
+                    },
+                    {
+                        "label": "오키나와 월드 솔직 후기 | 입장권·위치·공연 총정리",
+                        "url": "https://blog.naver.com/eunyul_150807/224098670511"
+                    }
+                ]
+            },
+            {
+                "time": "16:30",
+                "title": "우미카지 테라스",
+                "type": "spot",
+                "note": "공항 뷰 카페 거리",
+                "mapLink": "https://maps.app.goo.gl/M3wWYDDtSB6UtxiAA",
+                "links": [
+                    {
+                        "label": "시아와세노 팬케이크",
+                        "url": "https://blog.naver.com/blogrhy/224088240344"
+                    }
+                ]
+            },
+            {
+                "time": "19:00",
+                "title": "키지무나",
+                "type": "food",
+                "note": "타코 라이스",
+                "mapLink": "https://maps.app.goo.gl/Gf9zN1PA9vP81ccw8",
+                "links": [
+                    {
+                        "label": "오무라이스, 타코라이스 솔직 리뷰(+주차)",
+                        "url": "https://blog.naver.com/heej2117/223923852405"
+                    }
+                ]
+            },
+            {
+                "time": "19:00",
+                "title": "마제멘 마호로바",
+                "type": "food",
+                "note": "국제거리 마제멘 맛집",
+                "mapLink": "https://maps.app.goo.gl/CMKtJ264rGF1qmp29",
+                "links": [
+                    {
+                        "label": "마제소바 리얼후기",
+                        "url": "https://blog.naver.com/j_jang_vely/224068474673"
+                    }
+                ]
+            },
+            {
+                "time": "20:30",
+                "title": "호텔 귀가",
+                "type": "stay",
+                "note": "",
+                "mapLink": "https://maps.app.goo.gl/hwuMsbtPA2aA3jNr6",
+                "links": []
+            },
+            {
+                "time": "21:00",
+                "title": "국제거리 야경",
+                "type": "spot",
+                "note": "국제거리 워킹, 돈키호테 쇼핑.",
+                "mapLink": "https://maps.app.goo.gl/xFSGrJW2K6py9ggo8",
+                "links": [
+                    {
+                        "label": "돈키호테 추천템 쇼핑리스트",
+                        "url": "https://blog.naver.com/rainbowtuna/224125669621"
+                    },
+                    {
+                        "label": "드럭스토어 사츠도라 할인쿠폰",
+                        "url": "https://blog.naver.com/neweunha/224114753608"
+                    },
+                    {
+                        "label": "현지인 맛집·유료주차장·기념품 쇼핑까지 총정리",
+                        "url": "https://blog.naver.com/bookntour/224027891514"
+                    },
+                    {
+                        "label": "국제거리 쇼핑 맛집 지도",
+                        "url": "https://blog.naver.com/dodentjfl/224085595828"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "day": "5일차",
+        "date": "1월 7일 (수)",
+        "title": "귀국 및 마지막 쇼핑",
+        "events": [
+            {
+                "time": "07:00",
+                "title": "호텔 조식",
+                "type": "stay",
+                "note": "",
+                "mapLink": "https://maps.app.goo.gl/hwuMsbtPA2aA3jNr6",
+                "links": []
+            },
+            {
+                "time": "09:00",
+                "title": "호텔 체크아웃",
+                "type": "stay",
+                "note": "",
+                "mapLink": "https://maps.app.goo.gl/hwuMsbtPA2aA3jNr6",
+                "links": []
+            },
+            {
+                "time": "10:00",
+                "title": "나미노우에 신궁",
+                "type": "spot",
+                "note": "절벽 위 신사. 근처 주차장",
+                "mapLink": "https://maps.app.goo.gl/SSAsQQnSKT3MUka67",
+                "links": [
+                    {
+                        "label": "신사 나미노우에 궁",
+                        "url": "https://blog.naver.com/prahasnap/223883814444"
+                    },
+                    {
+                        "label": "나미노우에구 신사와 나미노우에 비치 ",
+                        "url": "https://blog.naver.com/trihel/223967597151"
+                    }
+                ]
+            },
+            {
+                "time": "11:30",
+                "title": "에이분 (EIBUN)",
+                "type": "food",
+                "note": "퓨전 소바. 오픈런 추천.",
+                "mapLink": "https://maps.app.goo.gl/kd4AExTxzoizyfgk9",
+                "links": [
+                    {
+                        "label": "에이분 소바 웨이팅 주차 추천메뉴",
+                        "url": "https://blog.naver.com/s_oooob/223996726520"
+                    },
+                    {
+                        "label": "현지 소바 맛집 에이분소바",
+                        "url": "https://blog.naver.com/thinkabout30/224057802536"
+                    },
+                    {
+                        "label": "에이분소바 솔직 후기",
+                        "url": "https://blog.naver.com/luvoniiiii/224061947366"
+                    }
+                ]
+            },
+            {
+                "time": "11:30",
+                "title": "쿠라시스",
+                "type": "food",
+                "note": "이온몰 2층, 회전 초밥",
+                "mapLink": "https://maps.app.goo.gl/kd4AExTxzoizyfgk9",
+                "links": [
+                    {
+                        "label": "쿠라스시 가성비 회전초밥",
+                        "url": "https://blog.naver.com/anotherplops/224118241353"
+                    }
+                ]
+            },
+            {
+                "time": "13:00",
+                "title": "이온몰 나하 쇼핑",
+                "type": "spot",
+                "note": "공항 근처 쇼핑.",
+                "mapLink": "https://maps.app.goo.gl/HPh2kDCN1ihW36nb9",
+                "links": [
+                    {
+                        "label": "이온 나하점",
+                        "url": "https://blog.naver.com/anotherplops/224118241353"
+                    }
+                ]
+            },
+            {
+                "time": "14:00",
+                "title": "렌터카 반납 & 공항",
+                "type": "move",
+                "note": "주유 후 반납.",
+                "mapLink": "https://maps.app.goo.gl/43v4n7nNy8pE5nf8A",
+                "links": []
+            },
+            {
+                "time": "16:50",
+                "title": "오키나와 나하 공항 출발",
+                "type": "move",
+                "note": "제주항공 7C1802 보잉 737-800",
+                "mapLink": "https://maps.app.goo.gl/sF3iw8bzizF6v7LaA",
+                "links": []
+            },
+            {
+                "time": "19:15",
+                "title": "인천공항 제1터미널 도착",
+                "type": "move",
+                "note": "안전 귀국!",
+                "mapLink": "https://maps.app.goo.gl/jtrzXBXb1ERMYBBA7",
+                "links": []
+            }
+        ]
+    }
+];
 
         // --- 공통 컴포넌트 ---
         const Modal = ({ isOpen, onClose, title, children }) => {
